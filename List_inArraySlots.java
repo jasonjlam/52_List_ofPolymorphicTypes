@@ -8,7 +8,7 @@ public class List_inArraySlots {
 
     // ================================================================
     // FIELDS
-    
+
     private int filledElements; // the number of elements in this list
 
     /* type identifier for each element
@@ -18,23 +18,23 @@ public class List_inArraySlots {
         Optional extra education in programming (not comp sci):
             replace these "magic numbers" with an "enumerated type".
      */
-    private Element[] list;
+    private Object[] list;
 
     private static final int INITIAL_CAPACITY = 10;
-    
+
     // ================================================================
     // CONSTRUCTORS
-    
+
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-      list = new Element[INITIAL_CAPACITY];
+      list = new Object[INITIAL_CAPACITY];
     }
-    
+
     // ================================================================
     // METHODS
-    
+
     /**
       @return the number of elements in this list
      */
@@ -49,7 +49,7 @@ public class List_inArraySlots {
       */
     public String toString() {
       String stringRep = "[";
-      
+
       for (int index = 0; index < filledElements; index++)
         stringRep += list[index] + ",";
 
@@ -63,16 +63,13 @@ public class List_inArraySlots {
 
       @return true, in keeping with conventions yet to be discussed
      */
-     public boolean add( int type   // same meaning as in typeOfElements
-                       , int    intValue
-                       , double doubleValue
-                       , String stringValue
+     public boolean add( Object item  // same meaning as in typeOfElements
                        ) {
         // expand when at max
         if (filledElements == list.length) expand();
-        
-        // create new instance using param and add 
-        list[filledElements] = new Element(type, intValue, doubleValue, stringValue);
+
+        // create new instance using param and add
+        list[filledElements] = item;
 
         // update size
         filledElements++;
@@ -80,7 +77,7 @@ public class List_inArraySlots {
         return true;
      }
 
-    public Element get(int index){
+    public Object get(int index){
         return list[index];
     }
 
@@ -98,10 +95,10 @@ public class List_inArraySlots {
               So test using the println(), then comment it out.
               */
 
-       //System.out.println( "old length:" + typeOfElements.length);
+       //System.out.println( "old length:" + typeOfObjects.length);
 
         // create new list, copy values over, and replace list
-        Element[] bigger = new Element[list.length * 2];
+        Object[] bigger = new Object[list.length * 2];
         for(int index=0;index<list.length; index++){
             bigger[index] = list[index];
         }

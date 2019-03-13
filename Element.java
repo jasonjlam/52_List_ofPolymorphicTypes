@@ -1,6 +1,6 @@
 /**
-  Represent an Element in a list, with disparate types available.  
-  
+  Represent an Element in a list, with disparate types available.
+
   For this exercise, polymorphism and overloading are banned.
   The result resembles how a C programmer might create a list
   c. 1975, except that a C structure cannot contain methods.
@@ -8,9 +8,8 @@
 public class Element{
     // ================================================================
     // FIELDS
-    private int type;
-    private int intValue;
-    private double doubleValue;
+    private Integer intValue;
+    private Double doubleValue;
     private String stringValue;
 
     public static final int INTS = 0;
@@ -21,7 +20,7 @@ public class Element{
     // ================================================================
     // CONSTRUCTOR
     // A single constructor, since overloading was banned.
-    
+
     public Element(int valType, int intVal, double doubleVal, String stringVal){
         type = valType;
         intValue = intVal;
@@ -57,5 +56,3 @@ public class Element{
 
 
 }
-
-
