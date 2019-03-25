@@ -108,4 +108,14 @@ public class List_inArraySlots {
        // System.out.println( "new length:" + typeOfElements.length);
 
      }
+
+     public boolean addAsHead(Object val){
+         if (filledElements == list.length) expand();
+         for(int i = filledElements; i > 0; i-- ){
+          list[i] = list[i-1];
+        }
+         list[0] = val;
+         filledElements++;
+         return true;
+     }
 }

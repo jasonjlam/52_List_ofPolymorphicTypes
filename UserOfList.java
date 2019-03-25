@@ -47,5 +47,9 @@ public class UserOfList {
          System.out.println(list.get(0));
          System.out.println(list.get(list.size()-1));
 
+         //addAsHead
+         list.addAsHead("head3");
+         System.out.println(list.get(0) + " is the head of " + list);
+
     }//test
 }
